@@ -49,6 +49,10 @@ namespace JobBoard
             app.UseStaticFiles();
             app.UseMvc(routes => {
                 routes.MapRoute(
+                    name: "pagination",
+                    template: "JobPosts/Page{page}",
+                    defaults: new { Controller = "JobPost", action = "List"});
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=JobPost}/{action=List}/{id?}");
             });
