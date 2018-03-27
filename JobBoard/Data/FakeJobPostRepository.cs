@@ -1,9 +1,10 @@
-﻿using System;
+﻿using JobBoard.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace JobBoard.Models
+namespace JobBoard.Data
 {
     // Temporary class to simulate data repository and provide information during development
     public class FakeJobPostRepository : IJobPostRepository
@@ -12,7 +13,7 @@ namespace JobBoard.Models
         public IEnumerable<JobPost> JobPosts => new List<JobPost>
         {
             new JobPost {
-                Id =1, Title = "Full Stack Developer",
+                JobPostID =1, Title = "Full Stack Developer",
                 AddressLine1 = "101-270 3RD ST W",
                 AddressLine2 = "",
                 City = "North Vancouver",
@@ -22,7 +23,7 @@ namespace JobBoard.Models
                 PostDate = DateTime.Now
             },
             new JobPost {
-                Id =2, Title = "Front-end Developer",
+                JobPostID =2, Title = "Front-end Developer",
                 AddressLine1 = "3696 Carnavon AVE",
                 AddressLine2 = "",
                 City = "North Vancouver",
