@@ -1,8 +1,4 @@
-﻿@model JobBoard.Models.Board
-
-@{
-    Layout = "_BasicLayout";
-    ViewBag.Title = "Job Board";
+﻿@{
 }
 
 <div id="search">
@@ -10,8 +6,4 @@
 </div>
 <div id="result">
     <p>Here goes the results</p>
-    @foreach (JobPost jp in Model.JobPosts) {
-        @jp.Id
-        @jp.Title
-    }
 </div>

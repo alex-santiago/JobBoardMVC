@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBoard", "JobBoard\JobBoard.csproj", "{08682EEB-BF2F-4773-8695-40DA5945872B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobBoard", "JobBoard\JobBoard.csproj", "{08682EEB-BF2F-4773-8695-40DA5945872B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBoard.Tests", "JobBoard.Tests\JobBoard.Tests.csproj", "{92D0A243-C4E8-4142-98A4-37B6A180FD37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{08682EEB-BF2F-4773-8695-40DA5945872B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08682EEB-BF2F-4773-8695-40DA5945872B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08682EEB-BF2F-4773-8695-40DA5945872B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92D0A243-C4E8-4142-98A4-37B6A180FD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D0A243-C4E8-4142-98A4-37B6A180FD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D0A243-C4E8-4142-98A4-37B6A180FD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D0A243-C4E8-4142-98A4-37B6A180FD37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

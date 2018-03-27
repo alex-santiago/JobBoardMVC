@@ -1,0 +1,10 @@
+﻿@model IEnumerable<JobPost>
+
+@foreach (var jp in Model) {
+<div>
+    <h3>@jp.Title</h3>
+    <p>@jp.PostDate.ToString("MMM/dd/yyyy")</p>
+    <p>@jp.City</p>
+    <p>@jp.Description</p>
+</div>
+}

@@ -1,6 +1,7 @@
 ﻿using System;
 namespace JobBoard.Models
 {
+    // Class that represents a Job Post and its properties
     public class JobPost
     {
         public JobPost()

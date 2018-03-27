@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JobBoard.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,6 +17,7 @@ namespace JobBoard
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IJobPostRepository, FakeJobPostRepository>();
             services.AddMvc();
         }
 
@@ -23,7 +25,17 @@ namespace JobBoard
         public void Configure(IApplicationBuilder app, IHostingEnvironment env,
             ILoggerFactory loggerFactory)
         {
-            app.UseMvcWithDefaultRoute();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            app.UseStatusCodePages();
+            app.UseStaticFiles();
+            app.UseMvc(routes => {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=JobPost}/{action=List}/{id?}");
+            });
         }
     }
 }
