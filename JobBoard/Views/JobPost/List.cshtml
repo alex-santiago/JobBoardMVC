@@ -1,10 +1,12 @@
-﻿@model IEnumerable<JobPost>
+﻿@model JobPostsListViewModel
 
-@foreach (var jp in Model) {
-<div>
-    <h3>@jp.Title</h3>
-    <p>@jp.PostDate.ToString("MMM/dd/yyyy")</p>
-    <p>@jp.City</p>
-    <p>@jp.Description</p>
-</div>
+@foreach (var jp in Model.JobPosts) {
+    <div>
+        <h3>@jp.Title</h3>
+        <p>@jp.PostDate.ToString("MMM/dd/yyyy")</p>
+        <p>@jp.City</p>
+        <p>@jp.Description</p>
+    </div>
 }
+
+<div page-model="@Model.PagingInfo" page-action="List"></div>
