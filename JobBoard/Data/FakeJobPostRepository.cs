@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace JobBoard.Data
 {
     // Temporary class to simulate data repository and provide information during development
-    public class FakeJobPostRepository : IJobPostRepository
+    public class FakeJobPostRepository /*: IJobPostRepository*/
     {
         // Class that implements the interface that will return the listing of job posts
         public IEnumerable<JobPost> JobPosts => new List<JobPost>

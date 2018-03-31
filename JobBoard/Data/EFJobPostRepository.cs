@@ -16,5 +16,25 @@ namespace JobBoard.Data
         }
 
         public IEnumerable<JobPost> JobPosts => context.JobPosts;
+
+        public void SaveJobPost(JobPost jobPost)
+        {
+            if (jobPost.JobPostID == 0)
+            {
+                context.JobPosts.Add(jobPost);
+            } else
+            {
+                JobPost dbEntry = context.JobPosts
+                    .FirstOrDefault(jp => jp.JobPostID == jobPost.JobPostID);
+                if (dbEntry != null) {
+                    dbEntry.Title = jobPost.Title;
+                    dbEntry.City = jobPost.City;
+                    dbEntry.Description = jobPost.Description;
+                    dbEntry.CloseDate = jobPost.CloseDate;
+                    dbEntry.PostDate = jobPost.PostDate;
+                }
+            }
+            context.SaveChanges();
+        }
     }
 }

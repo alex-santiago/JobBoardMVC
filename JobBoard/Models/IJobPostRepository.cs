@@ -9,5 +9,7 @@ namespace JobBoard.Models
     public interface IJobPostRepository
     {
         IEnumerable<JobPost> JobPosts { get; }
+
+        void SaveJobPost(JobPost jobPost);
     }
 }
