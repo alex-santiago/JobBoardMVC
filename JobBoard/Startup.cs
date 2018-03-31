@@ -48,16 +48,26 @@ namespace JobBoard
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseMvc(routes => {
+
                 routes.MapRoute(
                     name: "pagination",
                     template: "JobPosts/Page{page}",
                     defaults: new { Controller = "JobPost", action = "List"});
+
+                routes.MapRoute(
+                    name: "homepage",
+                    template: "JobPost/{action}",
+                    defaults: new { Controller = "JobPost", action = "List" });
+
+                routes.MapRoute(
+                    name: "homepage2",
+                    template: "JobPosts/{action}",
+                    defaults: new { Controller = "JobPost", action = "List" });
+
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=JobPost}/{action=List}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
-            // Populates de database if empty;
-            //SeedData.EnsurePopulated(app);
         }
     }
 }

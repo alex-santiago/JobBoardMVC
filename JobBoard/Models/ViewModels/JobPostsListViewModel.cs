@@ -10,5 +10,6 @@ namespace JobBoard.Models.ViewModels
     {
         public IEnumerable<JobPost> JobPosts { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public SearchOptions SearchOptions { get; set; }
     }
 }
