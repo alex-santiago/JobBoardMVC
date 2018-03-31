@@ -6,3 +6,45 @@
 @{
     Layout = "_AdminLayout";
 }
+
+<form asp-controller="Admin" asp-action="Edit" method="post">
+  <input type="hidden" asp-for="JobPostID">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" type="text">
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <label asp-for="Location"></label>
+        <input asp-for="Location" class="form-control" type="text">
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control" ></textarea>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label asp-for="CloseDate"></label>
+        <input asp-for="CloseDate" class="form-control" type="date-local">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label asp-for="PostDate"></label>
+        <input asp-for="PostDate" class="form-control" type="date-local">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <button class="btn btn-primary" type="submit">Save</button>
+      <a asp-action="Index" class="btn btn-default">Cancel</a>
+    </div>
+  </div>
+</form>
