@@ -63,5 +63,11 @@ namespace JobBoard.Controllers
                 }
             });
         }
+
+        public ViewResult View(int jobPostID)
+        {
+            return View("View", repository.JobPosts
+                .FirstOrDefault(p => p.JobPostID == jobPostID));
+        }
     }
 }
