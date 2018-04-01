@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="row mt-3 mb-3">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <form asp-controller="JobPost" asp-action="Search" method="post">
+            <div class="input-group custom-search-form">
+                <input name="title" type="text" class="form-control" placeholder="Search for a job..." value="@Model.SearchOptions.Title" />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+</div>

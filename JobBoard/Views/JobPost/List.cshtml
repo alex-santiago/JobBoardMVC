@@ -1,22 +1,7 @@
 ﻿@model JobPostsListViewModel
 
+@Html.Partial("JobPostSearchBasic")
 
-<div class="row mt-3 mb-3">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-        <form asp-controller="JobPost" asp-action="Search" method="post">
-            <div class="input-group custom-search-form">
-                <input name="title" type="text" class="form-control" placeholder="Search for a job..." value="@Model.SearchOptions.Title" />
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </span>
-            </div>
-        </form>
-    </div>
-    <div class="col-sm-4"></div>
-</div>
 <div class="row mb-3">
     @foreach (var jp in Model.JobPosts)
     {
