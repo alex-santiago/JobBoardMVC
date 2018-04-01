@@ -2,6 +2,11 @@
     background-color: #337ab7
 }
 
+.input-validation-error {
+    border-color: red;
+    background-color: #fee;
+}
+
 #wrapper {
     width: 100%
 }

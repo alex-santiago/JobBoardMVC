@@ -8,43 +8,48 @@
 }
 
 <form asp-controller="Admin" asp-action="Edit" method="post">
-  <input type="hidden" asp-for="JobPostID">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="form-group">
-        <label asp-for="Title"></label>
-        <input asp-for="Title" class="form-control" type="text">
-      </div>
+    <input type="hidden" asp-for="JobPostID">
+    <input type="hidden" asp-for="CompanyID">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Title">Title</label>
+                <div><span asp-validation-for="Title" class="text-danger"></span></div>
+                <input asp-for="Title" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="City">Location</label>
+                <div><span asp-validation-for="City" class="text-danger"></span></div>
+                <input asp-for="City" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <div><span asp-validation-for="Description" class="text-danger"></span></div>
+                <textarea asp-for="Description" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="CloseDate">Post Close Date</label>
+                <input asp-for="CloseDate" class="form-control" type="date">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="PostDate">Post Date</label>
+                <div><span asp-validation-for="PostDate" class="text-danger"></span></div>
+                <input asp-for="PostDate" class="form-control" type="date">
+            </div>
+        </div>
     </div>
-    <div class="col-md-12">
-      <div class="form-group">
-        <label asp-for="City"></label>
-        <input asp-for="City" class="form-control" type="text">
-      </div>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <button class="btn btn-primary" type="submit">Save</button>
+            <a asp-controller="Admin" asp-action="Index" class="btn btn-default">Cancel</a>
+        </div>
     </div>
-    <div class="col-md-12">
-      <div class="form-group">
-        <label asp-for="Description"></label>
-        <textarea asp-for="Description" class="form-control" ></textarea>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label asp-for="CloseDate"></label>
-        <input asp-for="CloseDate" class="form-control" type="date">
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label asp-for="PostDate"></label>
-        <input asp-for="PostDate" class="form-control" type="date">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12 text-center">
-      <button class="btn btn-primary" type="submit">Save</button>
-      <a asp-controller="Admin" asp-action="Index" class="btn btn-default">Cancel</a>
-    </div>
-  </div>
 </form>

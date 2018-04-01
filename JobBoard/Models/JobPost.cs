@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace JobBoard.Models
 {
@@ -11,14 +13,18 @@ namespace JobBoard.Models
         }
 
         public int JobPostID { get; set; }
+        [Required(ErrorMessage = "Please enter a Title for the Job Post")]
         public string Title { get; set; }
+        [Required(ErrorMessage = "Please enter the Job Post Description")]
         public string Description { get; set; }
         public string CountryCode { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string StateCode { get; set; }
+        [Required(ErrorMessage = "Please enter the Job Post Location")]
         public string City { get; set; }
         public string PostalCode { get; set; }
+        [Required(ErrorMessage = "Please enter the Job Post Date")]
         public DateTime PostDate { get; set; }
         public DateTime? CloseDate { get; set; }
 

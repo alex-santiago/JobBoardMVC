@@ -54,7 +54,7 @@ namespace JobBoard.Controllers
             }
         }
 
-        public IActionResult Create() => View("Edit", new JobPost());
+        public IActionResult Create() => View("Edit", new JobPost() { CompanyID = 1, PostDate = DateTime.Now });
 
         [HttpPost]
         public IActionResult Delete(int jobPostID)
