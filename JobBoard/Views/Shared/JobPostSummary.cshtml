@@ -7,6 +7,7 @@
 <div class="card mb-3">
     <div class="card-header">
         <h3 class="card-title">@Model.Title</h3>
+        <h4 class="card-title">@Model.Company?.name</h4>
     </div>
     <div class="card-body">
         <input type="hidden" name="JobPostID" value="@Model.JobPostID" />

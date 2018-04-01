@@ -18,6 +18,18 @@ namespace JobBoard.Data
 
             if (!context.JobPosts.Any())
             {
+                context.Companies.AddRange(
+                    new Company
+                    {
+                        name = "LongBoards Inc."
+                    },
+                    new Company
+                    {
+                        name = "Dev Inc."
+                    }
+                );
+                context.SaveChanges();
+
                 context.JobPosts.AddRange(
                     new JobPost
                     {
@@ -27,7 +39,8 @@ namespace JobBoard.Data
                         CountryCode = "Canada",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo porttitor elit nec porttitor. Mauris auctor risus quis commodo volutpat. Quisque feugiat blandit velit in interdum. Cras sed faucibus orci. Maecenas mi orci, pretium non magna eu, fringilla porttitor mauris. Cras rutrum pulvinar lorem, sit amet malesuada nulla ornare ut",
                         PostDate = new DateTime(2018, 3, 12),
-                        CloseDate = new DateTime(2018, 5, 30)
+                        CloseDate = new DateTime(2018, 5, 30),
+                        CompanyID = context.Companies.Single( c => c.name == "LongBoards Inc.").ID
                     },
                     new JobPost
                     {
@@ -36,7 +49,8 @@ namespace JobBoard.Data
                         City = "Vancouver",
                         CountryCode = "Canada",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo porttitor elit nec porttitor. Mauris auctor risus quis commodo volutpat. Quisque feugiat blandit velit in interdum. Cras sed faucibus orci. Maecenas mi orci, pretium non magna eu, fringilla porttitor mauris. Cras rutrum pulvinar lorem, sit amet malesuada nulla ornare ut",
-                        PostDate = new DateTime(2018, 2, 2)
+                        PostDate = new DateTime(2018, 2, 2),
+                        CompanyID = context.Companies.Single( c => c.name == "Dev Inc.").ID
                     },
                     new JobPost
                     {
@@ -46,7 +60,8 @@ namespace JobBoard.Data
                         CountryCode = "Canada",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo porttitor elit nec porttitor. Mauris auctor risus quis commodo volutpat. Quisque feugiat blandit velit in interdum. Cras sed faucibus orci. Maecenas mi orci, pretium non magna eu, fringilla porttitor mauris. Cras rutrum pulvinar lorem, sit amet malesuada nulla ornare ut",
                         PostDate = new DateTime(2018, 3, 12),
-                        CloseDate = new DateTime(2018, 3, 31)
+                        CloseDate = new DateTime(2018, 3, 31),
+                        CompanyID = context.Companies.Single( c => c.name == "Dev Inc.").ID
                     },
                     new JobPost
                     {
@@ -55,7 +70,8 @@ namespace JobBoard.Data
                         City = "Delta",
                         CountryCode = "Canada",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo porttitor elit nec porttitor. Mauris auctor risus quis commodo volutpat. Quisque feugiat blandit velit in interdum. Cras sed faucibus orci. Maecenas mi orci, pretium non magna eu, fringilla porttitor mauris. Cras rutrum pulvinar lorem, sit amet malesuada nulla ornare ut",
-                        PostDate = new DateTime(2018, 2, 15)
+                        PostDate = new DateTime(2018, 2, 15),
+                        CompanyID = context.Companies.Single( c => c.name == "LongBoards Inc.").ID
                     },
                     new JobPost
                     {
@@ -65,7 +81,8 @@ namespace JobBoard.Data
                         CountryCode = "Canada",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo porttitor elit nec porttitor. Mauris auctor risus quis commodo volutpat. Quisque feugiat blandit velit in interdum. Cras sed faucibus orci. Maecenas mi orci, pretium non magna eu, fringilla porttitor mauris. Cras rutrum pulvinar lorem, sit amet malesuada nulla ornare ut",
                         PostDate = new DateTime(2018, 1, 25),
-                        CloseDate = new DateTime(2018, 6, 30)
+                        CloseDate = new DateTime(2018, 6, 30),
+                        CompanyID = context.Companies.Single( c => c.name == "LongBoards Inc.").ID
                     },
                     new JobPost
                     {
@@ -75,7 +92,8 @@ namespace JobBoard.Data
                         CountryCode = "Canada",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo porttitor elit nec porttitor. Mauris auctor risus quis commodo volutpat. Quisque feugiat blandit velit in interdum. Cras sed faucibus orci. Maecenas mi orci, pretium non magna eu, fringilla porttitor mauris. Cras rutrum pulvinar lorem, sit amet malesuada nulla ornare ut",
                         PostDate = new DateTime(2018, 1, 25),
-                        CloseDate = new DateTime(2018, 3, 31)
+                        CloseDate = new DateTime(2018, 3, 31),
+                        CompanyID = context.Companies.Single( c => c.name == "LongBoards Inc.").ID
                     },
                     new JobPost
                     {
@@ -85,7 +103,8 @@ namespace JobBoard.Data
                         CountryCode = "Canada",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo porttitor elit nec porttitor. Mauris auctor risus quis commodo volutpat. Quisque feugiat blandit velit in interdum. Cras sed faucibus orci. Maecenas mi orci, pretium non magna eu, fringilla porttitor mauris. Cras rutrum pulvinar lorem, sit amet malesuada nulla ornare ut",
                         PostDate = new DateTime(2018, 1, 25),
-                        CloseDate = new DateTime(2018, 1, 31)
+                        CloseDate = new DateTime(2018, 1, 31),
+                        CompanyID = context.Companies.Single( c => c.name == "Dev Inc.").ID
                     },
                     new JobPost
                     {
@@ -94,7 +113,8 @@ namespace JobBoard.Data
                         City = "North Vancouver",
                         CountryCode = "Canada",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo porttitor elit nec porttitor. Mauris auctor risus quis commodo volutpat. Quisque feugiat blandit velit in interdum. Cras sed faucibus orci. Maecenas mi orci, pretium non magna eu, fringilla porttitor mauris. Cras rutrum pulvinar lorem, sit amet malesuada nulla ornare ut",
-                        PostDate = new DateTime(2018, 3, 28)
+                        PostDate = new DateTime(2018, 3, 28),
+                        CompanyID = context.Companies.Single( c => c.name == "LongBoards Inc.").ID
                     }
                 );
                 context.SaveChanges();

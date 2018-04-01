@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace JobBoard.Data
 {
@@ -15,7 +16,13 @@ namespace JobBoard.Data
             context = ctx;
         }
 
-        public IEnumerable<JobPost> JobPosts => context.JobPosts;
+        public IEnumerable<JobPost> JobPosts
+        {
+            get
+            {
+                return context.JobPosts.Include(jp => jp.Company);
+            }
+        }
 
         public void SaveJobPost(JobPost jobPost)
         {

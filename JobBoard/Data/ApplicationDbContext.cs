@@ -15,5 +15,6 @@ namespace JobBoard.Data
 
         // Provides access to the JobPost object in the database
         public DbSet<JobPost> JobPosts { get; set; }
+        public DbSet<Company> Companies { get; set; }
     }
 }

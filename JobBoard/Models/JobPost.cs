@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace JobBoard.Models
 {
     // Class that represents a Job Post and its properties
@@ -19,6 +21,10 @@ namespace JobBoard.Models
         public string PostalCode { get; set; }
         public DateTime PostDate { get; set; }
         public DateTime? CloseDate { get; set; }
+
+        public int CompanyID { get; set; }
+        [ForeignKey("CompanyID")]
+        public virtual Company Company { get; set; }
 
     }
 }

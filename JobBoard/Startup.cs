@@ -59,6 +59,7 @@ namespace JobBoard
                     template: "JobPost/{action}",
                     defaults: new { Controller = "JobPost", action = "List" });
 
+                // TODO: Replace with RegExp
                 routes.MapRoute(
                     name: "homepage2",
                     template: "JobPosts/{action}",
