@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JobBoard.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -13,7 +14,7 @@ namespace JobBoard.Controllers
         // GET: /<controller>/
         public ViewResult Index()
         {
-            return View("Index");
+            return View(nameof(Index), new JobPostsListViewModel { });
         }
     }
 }

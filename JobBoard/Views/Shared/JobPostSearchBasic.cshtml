@@ -7,7 +7,7 @@
     <div class="col-sm-4">
         <form asp-controller="JobPost" asp-action="Search" method="post">
             <div class="input-group custom-search-form">
-                <input name="title" type="text" class="form-control" placeholder="Search for a job..." value="@Model.SearchOptions.Title" />
+                <input name="title" type="text" class="form-control" placeholder="Search for...Developer, Designer" value="@Model.SearchOptions?.Title" />
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="submit">
                         <i class="fa fa-search"></i>

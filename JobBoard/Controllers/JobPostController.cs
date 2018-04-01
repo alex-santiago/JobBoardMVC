@@ -46,7 +46,7 @@ namespace JobBoard.Controllers
         public ViewResult Search(string title, int page = 1)
         {
             ViewBag.Title = "Search Results";
-            return View("List", new JobPostsListViewModel
+            return View(nameof(List), new JobPostsListViewModel
             {
                 JobPosts = repository.JobPosts
                 .Where(p => title == null || p.Title.Contains(title))
@@ -70,7 +70,7 @@ namespace JobBoard.Controllers
 
         public ViewResult View(int jobPostID)
         {
-            return View("View", repository.JobPosts
+            return View(nameof(View), repository.JobPosts
                 .FirstOrDefault(p => p.JobPostID == jobPostID));
         }
     }

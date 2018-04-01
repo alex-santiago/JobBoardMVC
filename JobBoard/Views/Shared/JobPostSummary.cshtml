@@ -7,12 +7,13 @@
 <div class="card mb-3">
     <div class="card-header">
         <h3 class="card-title">@Model.Title</h3>
-        <h4 class="card-title">@Model.Company?.name</h4>
+        <h4 class="card-title">At @Model.Company?.name</h4>
     </div>
     <div class="card-body">
         <input type="hidden" name="JobPostID" value="@Model.JobPostID" />
-        <p class="card-text">@Model.PostDate.ToString("MMM/dd/yyyy")</p>
+        <p class="card-text">Posted on @Model.PostDate.ToString("MMM/dd/yyyy")</p>
         <p class="card-text">@Model.City</p>
+        <p class="card-text"><strong>Requirements:</strong></p>
         <p class="card-text">@Model.Description</p>
     </div>
     <div class="card-footer ">
