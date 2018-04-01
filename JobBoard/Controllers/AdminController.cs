@@ -45,7 +45,7 @@ namespace JobBoard.Controllers
             {
                 repository.SaveJobPost(jobPost);
                 TempData["message"] = $"The job post for {jobPost.Title} has been saved.";
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
                 //return View(jobPost);
             }
             else
@@ -64,7 +64,7 @@ namespace JobBoard.Controllers
             {
                 TempData["message"] = $"The job post for {deletedJobPost.Title} has been deleted.";
             }
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
     }
 }
