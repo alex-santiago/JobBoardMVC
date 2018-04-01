@@ -14,46 +14,34 @@
 <body>
     <div id="wrapper" class="">
         <!-- Navigation -->
-        <nav class="navbar text-primary bg-white fixed-top ml-3 mr-3" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Job Miner</a>
+        <header class="navbar bg-white navbar-static-top">
+            <a class="navbar-brand navbar-btn mr-0 mr-md-2" asp-controller="Home" asp-action="Index">Job Miner</a>
+            <div class="">
+                <ul class="nav nav-pills navbar-btn navbar-nav navbar-left">
+                    @*<li class="nav-item">
+                        <a class="nav-link" href="#">My Posts</a>
+                    </li>*@
+                    @*<li class="nav-item">
+                        <a class="nav-link" asp-controller="Admin" asp-action="Create">Post Job</a>
+                    </li>*@
+                    <li class="nav-item">
+                        <a href="#"><i class="fa fa-user fa-fw "></i> User Profile</a>
+                    </li>
+                </ul>
             </div>
-            <!-- /.navbar-header -->
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-        </nav>
+        </header>
         <div id="page-wrapper">
-            @{ 
-                //var hastitle = (ViewBag?.Title ? true : false);
-                if (!(ViewBag.Title==null))
-                {
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="page-header">@ViewBag.Title</h1>
-                        </div>
+            @{
+            //var hastitle = (ViewBag?.Title ? true : false);
+            if (!(ViewBag.Title == null))
+            {
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">@ViewBag.Title</h1>
                     </div>
-                    }
-             }
+                </div>
+        }
+            }
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
