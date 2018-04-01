@@ -14,7 +14,7 @@ namespace JobBoard.Controllers
     {
         private IJobPostRepository repository;
 
-        public int PageSize = 6;
+        public int PageSize = 4;
 
         public JobPostController(IJobPostRepository repo)
         {
@@ -42,20 +42,24 @@ namespace JobBoard.Controllers
             });
         }
 
-        public ViewResult Search(string title)
+        //TODO: Add pagination to search results
+        public ViewResult Search(string title, int page = 1)
         {
             ViewBag.Title = "Search Results";
             return View("List", new JobPostsListViewModel
             {
                 JobPosts = repository.JobPosts
-                .Where(p => title == null || p.Title == title)
+                .Where(p => title == null || p.Title.Contains(title))
                 .OrderBy(p => p.PostDate)
+                .Skip((page-1) * PageSize)
                 .Take(PageSize),
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = 1,
+                    CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = repository.JobPosts.Count()
+                    TotalItems = title == null ? 
+                        repository.JobPosts.Count() :
+                        repository.JobPosts.Where(el => el.Title.Contains(title)).Count()
                 },
                 SearchOptions = new SearchOptions
                 {

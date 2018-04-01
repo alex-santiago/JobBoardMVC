@@ -14,6 +14,7 @@ namespace JobBoard.Controllers
     {
         private IJobPostRepository repository;
 
+        //TODO: redesign pagination
         public int PageSize = 10;
 
         public AdminController(IJobPostRepository repo)
@@ -24,12 +25,12 @@ namespace JobBoard.Controllers
         public ViewResult Index() => View(new JobPostsListViewModel
             {
                 JobPosts = repository.JobPosts
-                .OrderBy(p => p.PostDate)
-                .Take(PageSize),
+                .OrderBy(p => p.PostDate),
+                //.Take(PageSize),
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = 1,
-                    ItemsPerPage = PageSize,
+                    ItemsPerPage = repository.JobPosts.Count(),
                     TotalItems = repository.JobPosts.Count()
                 },
                 SearchOptions = new SearchOptions()
