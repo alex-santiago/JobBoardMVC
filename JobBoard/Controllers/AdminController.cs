@@ -53,5 +53,18 @@ namespace JobBoard.Controllers
                 return View(jobPost);
             }
         }
+
+        public IActionResult Create() => View("Edit", new JobPost());
+
+        [HttpPost]
+        public IActionResult Delete(int jobPostID)
+        {
+            JobPost deletedJobPost =  repository.DeleteJobPost(jobPostID);
+            if (deletedJobPost != null)
+            {
+                TempData["message"] = $"The job post for {deletedJobPost.Title} has been deleted.";
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

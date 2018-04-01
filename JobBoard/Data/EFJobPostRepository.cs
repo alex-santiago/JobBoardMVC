@@ -36,5 +36,17 @@ namespace JobBoard.Data
             }
             context.SaveChanges();
         }
+
+        public JobPost DeleteJobPost(int jobPostID)
+        {
+            JobPost dbEntry = context.JobPosts
+                    .FirstOrDefault(jp => jp.JobPostID == jobPostID);
+            if (dbEntry != null)
+            {
+                context.JobPosts.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
     }
 }

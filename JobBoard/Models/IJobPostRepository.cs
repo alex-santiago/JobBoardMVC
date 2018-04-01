@@ -11,5 +11,7 @@ namespace JobBoard.Models
         IEnumerable<JobPost> JobPosts { get; }
 
         void SaveJobPost(JobPost jobPost);
+
+        JobPost DeleteJobPost(int jobPostID);
     }
 }
