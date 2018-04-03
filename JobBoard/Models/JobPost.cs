@@ -17,13 +17,11 @@ namespace JobBoard.Models
         public string Title { get; set; }
         [Required(ErrorMessage = "Please enter the Job Post Description")]
         public string Description { get; set; }
-        public string CountryCode { get; set; }
-        public string AddressLine1 { get; set; }
-        public string AddressLine2 { get; set; }
+        public string CountryCode { get; set; } // TODO: Review; 
         public string StateCode { get; set; }
         [Required(ErrorMessage = "Please enter the Job Post Location")]
-        public string City { get; set; }
-        public string PostalCode { get; set; }
+        public string City { get; set; } // TODO: Review; 
+        public string PostalCode { get; set; } // TODO: Review; 
         [Required(ErrorMessage = "Please enter the Job Post Date")]
         public DateTime PostDate { get; set; }
         public DateTime? CloseDate { get; set; }
